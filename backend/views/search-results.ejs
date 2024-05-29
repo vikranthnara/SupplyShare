@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Search Results</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Search Results</h1>
+    </header>
+    <main>
+      <% if (items.length > 0) { %>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% items.forEach(item => { %>
+              <tr>
+                <td><%= item.Name %></td>
+                <td><%= item.Price %></td>
+                <td>
+                  <form action="/cart" method="POST">
+                    <input type="hidden" name="itemId" value="<%= item.UUID %>">
+                    <button type="submit">Add to Cart</button>
+                  </form>
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      <% } else { %>
+        <p>No items found.</p>
+      <% } %>
+    </main>
+  </body>
+</html>

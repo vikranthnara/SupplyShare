@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Cart</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Cart</h1>
+  </header>
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (items.length > 0) { %>
+          <% items.forEach(item => { %>
+          <tr>
+            <td><%= item.Name %></td>
+            <td><%= item.Price %></td>
+            <td>
+              <form action="/cart/delete/<%= item.ItemId %>" method="POST">
+                <button type="submit">Delete</button>
+              </form>
+            </td>
+          </tr>
+          <% }); %>
+        <% } else { %>
+          <tr>
+            <td colspan="3">No items in cart</td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+
+    <h2>Add Item to Cart</h2>
+    <form action="/search-results" method="GET">
+      <button type="submit">Add Items to Cart</button>
+    </form>
+  </main>
+</body>
+</html>

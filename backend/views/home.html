@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/register">Register</a>
+        <a href="/login">Login</a>
+        <a href="/seller-form">Sell an Item</a>
+        <a href="/cart">
+          <button>Go to Cart</button>
+        </a>
+      </nav>
+    </header>
+    <main>
+      <h1>Welcome to the Marketplace</h1>
+      <form action="/search" method="get">
+        <label for="search">Search for an item:</label>
+        <input type="text" id="search" name="name" required />
+        <button type="submit">Search</button>
+      </form>
+    </main>
+  </body>
+</html>
